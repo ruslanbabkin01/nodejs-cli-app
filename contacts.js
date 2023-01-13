@@ -33,6 +33,7 @@ async function removeContact(contactId) {
     const newArr = parsedData.filter(
       (item) => item.id !== contactId.toString()
     );
+    console.log(`Contact ${contactId} deleted`);
 
     await fs.writeFile(contactsPath, JSON.stringify(newArr), "utf-8");
   } catch (err) {
